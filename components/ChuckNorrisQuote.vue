@@ -32,3 +32,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  div {
+      user-select: none;
+      cursor: pointer;
+  }
+</style>
