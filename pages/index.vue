@@ -36,7 +36,7 @@ export default {}
   display: block;
   font-weight: 300;
   font-size: 50px;
-  color: #35495e;
+  color: whitesmoke;
   letter-spacing: 1px;
 }
 
