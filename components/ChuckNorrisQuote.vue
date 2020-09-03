@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="getPosts()">
     <p v-if="$fetchState.pending">
       ... Chuck Norris is downloading the internet into his brain ...
     </p>
@@ -7,21 +7,27 @@
       Chuck Norris has broken the internet, because he already knows every single bit of it by heart
     </p>
     <p v-else>
-      {{ quote.value }}
+      {{ results.value }}
     </p>
   </div>
 </template>
 
 <script>
+const APIBaseUrl = 'https://api.chucknorris.io/jokes/random'
 export default {
   async fetch () {
-    this.quote = await fetch(
-      'https://api.chucknorris.io/jokes/random'
-    ).then(res => res.json())
+    await this.getPosts()
   },
   data () {
     return {
-      quote: null
+      results: null
+    }
+  },
+  methods: {
+    async getPosts () {
+      this.results = await fetch(
+        APIBaseUrl
+      ).then(res => res.json())
     }
   }
 }
