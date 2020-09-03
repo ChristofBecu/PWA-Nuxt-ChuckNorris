@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h2 class="title">
+    <p class="title">
       <ChuckNorrisQuote />
-    </h2>
+    </p>
   </div>
 </template>
 
@@ -18,6 +18,8 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-width: 200px;
+  max-width: 900px;
 }
 
 .title {
@@ -33,7 +35,7 @@ export default {}
     sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 50px;
   color: #35495e;
   letter-spacing: 1px;
 }

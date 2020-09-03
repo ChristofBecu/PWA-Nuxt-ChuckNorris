@@ -64,6 +64,8 @@ export default {
   pwa: {
     manifest: {
       name: 'Chuck Norris PWA',
+      short_name: 'Chuck',
+      display: 'standalone',
       useWebmanifestExtension: false
     }
   }
