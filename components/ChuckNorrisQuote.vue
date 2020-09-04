@@ -4,7 +4,8 @@
       ... Chuck Norris is downloading the internet into his brain ...
     </p>
     <p v-else-if="$fetchState.error">
-      Chuck Norris has broken the internet, because he already knows every single bit of it by heart
+      Chuck Norris has broken the internet, because he already knows every
+      single bit of it by heart
     </p>
     <p v-else>
       {{ results.value }}
@@ -25,18 +26,23 @@ export default {
   },
   methods: {
     async getPosts () {
-      this.results = await fetch(
-        APIBaseUrl
-      ).then(res => res.json())
+      this.results = await fetch(APIBaseUrl).then(res => res.json())
     }
   }
 }
 </script>
 
 <style scoped>
-  div {
-      user-select: none;
-      cursor: pointer;
-      padding: 0.5em;
-  }
+div {
+  user-select: none;
+  cursor: pointer;
+  padding: 0.5em;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 </style>
