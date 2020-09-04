@@ -29,7 +29,6 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 5;
 }
 
 </style>

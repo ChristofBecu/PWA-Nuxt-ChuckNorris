@@ -36,7 +36,7 @@ export default {}
     sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 50px;
+  font-size: 3em;
   color: whitesmoke;
   letter-spacing: 1px;
 }
@@ -51,5 +51,12 @@ export default {}
 
 .links {
   padding-top: 15px;
+}
+
+img {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -75px;
 }
 </style>
