@@ -37,5 +37,6 @@ export default {
   div {
       user-select: none;
       cursor: pointer;
+      padding: 0.5em;
   }
 </style>
