@@ -1,3 +1,5 @@
 # PWA-Nuxt-ChuckNorris
 
-[Chuck Norris PWA on netlify](https://chucknorris-pwa.netlify.app)
+[https://chucknorris-pwa.netlify.app](https://chucknorris-pwa.netlify.app)
+
+Experiments with [nuxt/pwa](https://pwa.nuxtjs.org/)
