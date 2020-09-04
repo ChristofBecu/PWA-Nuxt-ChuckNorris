@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <p class="title">
+      <img src="favicon.png" alt="chuck norris">
       <ChuckNorrisQuote />
     </p>
   </div>
