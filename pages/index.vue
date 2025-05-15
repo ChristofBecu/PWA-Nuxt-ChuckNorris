@@ -1,14 +1,15 @@
 <template>
   <div class="container">
     <p class="title">
-      <img src="favicon.png" alt="chuck norris">
+      <img src="/favicon.png" alt="chuck norris">
       <ChuckNorrisQuote />
     </p>
   </div>
 </template>
 
-<script>
-export default {}
+<script setup>
+// Using script setup syntax for Vue 3, 
+// no additional JS needed for this component
 </script>
 
 <style>

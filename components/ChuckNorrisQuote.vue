@@ -1,34 +1,52 @@
 <template>
-  <div @click="getPosts()">
-    <p v-if="$fetchState.pending">
+  <div @click="refreshQuote">
+    <p v-if="pending">
       ... Chuck Norris is downloading the internet into his brain ...
     </p>
-    <p v-else-if="$fetchState.error">
+    <p v-else-if="error">
       Chuck Norris has broken the internet, because he already knows every
       single bit of it by heart
     </p>
     <p v-else>
-      {{ results.value }}
+      {{ quote }}
     </p>
   </div>
 </template>
 
-<script>
+<script setup>
 const APIBaseUrl = 'https://api.chucknorris.io/jokes/random'
-export default {
-  async fetch () {
-    await this.getPosts()
-  },
-  data () {
-    return {
-      results: null
+
+const quote = ref('')
+const pending = ref(true)
+const error = ref(false)
+
+async function fetchQuote() {
+  pending.value = true
+  error.value = false
+  
+  try {
+    const response = await fetch(APIBaseUrl)
+    if (!response.ok) {
+      throw new Error('Network response was not ok')
     }
-  },
-  methods: {
-    async getPosts () {
-      this.results = await fetch(APIBaseUrl).then(res => res.json())
-    }
+    const data = await response.json()
+    quote.value = data.value
+  } catch (err) {
+    console.error('Error fetching Chuck Norris quote:', err)
+    error.value = true
+  } finally {
+    pending.value = false
   }
+}
+
+// Initial fetch
+onMounted(() => {
+  fetchQuote()
+})
+
+// Method to refresh the quote
+function refreshQuote() {
+  fetchQuote()
 }
 </script>
 
